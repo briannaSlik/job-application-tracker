@@ -1,0 +1,78 @@
+
+<mat-card>
+    <form (submit)="onSaveApplication(applicationForm)" #applicationForm="ngForm">
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.title"
+            name="title" 
+            required
+            placeholder="Title"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter the position title.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.company"
+            name="company" 
+            required
+            placeholder="Company"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter the company name.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.salary"
+            name="salary" 
+            required
+            placeholder="Salary"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter the position's salary range.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.location"
+            name="location" 
+            required
+            placeholder="Location"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter the position's location.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.hours"
+            name="hours" 
+            required
+            placeholder="Hours"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter the positions hours.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+            type="text" 
+            [ngModel] = "application?.link"
+            name="link" 
+            required
+            placeholder="Link"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter a url to the position's original posting.</mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <textarea matInput 
+            rows="6" 
+            [ngModel] = "application?.company"
+            name="company" 
+            required
+            placeholder="Company"
+            #company="ngModel"></textarea>
+            <mat-error *ngIf="company.invalid">Please enter a company.</mat-error>
+        </mat-form-field> -->
+        <button mat-raised-button 
+        color="accent" 
+        type="submit">Save Application</button>
+    </form>
+</mat-card>

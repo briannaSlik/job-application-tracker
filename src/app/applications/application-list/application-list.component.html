@@ -1,0 +1,29 @@
+<!-- <mat-accordion multi="true" *ngIf="applications.length > 0">
+    <mat-expansion-panel *ngFor="let application of applications">
+        <mat-expansion-panel-header>
+            {{ application.title }}
+        </mat-expansion-panel-header>
+        <p>{{ application.company }}</p>
+        <mat-action-row>
+            <a mat-button [routerLink]="['./edit', application.id]" color="primary">Edit</a>
+            <button mat-button color="warn" (click)="onDelete(application.id)">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="applications.length <= 0">No applications added yet!</p> -->
+
+<mat-card *ngFor="let application of applications">
+    <h2>{{ application.title }}</h2>
+    <h3> {{ application.company }} </h3>
+    <br>
+    <ul>
+        <li>Location: {{ application.location }}</li>
+        <li>Hours: {{ application.hours }}</li>
+        <li>Salary: {{ application.salary }}</li>
+    </ul>
+    <a [href]='application.link'>View Original Listing</a>
+    <div class="bottom-section">
+        <a class='action-button' mat-button [routerLink]="['./edit', application.id]" color="primary">Edit</a>
+        <button class='action-button' mat-button color="warn" (click)="onDelete(application.id)">Delete</button>
+    </div>
+</mat-card>
